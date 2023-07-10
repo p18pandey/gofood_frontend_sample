@@ -21,7 +21,10 @@ export default function Signup() {
             if(!json.success){
                 alert("Enter Valid Credentials")
             }
-
+                if(json.success)
+                {
+                    alert("Account created successfully. Click on 'Already a user' to login ")
+                }
         }
     const onChange=(event)=>{
             setcredentials({...credentials ,[event.target.name]:event.target.value})
@@ -54,6 +57,7 @@ export default function Signup() {
                     </div>
 
                     <button type="submit" className="btn btn-success m-3">Submit</button>
+                    {/* <Link to="/login" className='btn btn-danger m-3'>Submit </Link> */}
                     <Link to="/login" className='btn btn-danger m-3'>Already a User </Link>
 
                 </form>
